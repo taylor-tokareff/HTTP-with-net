@@ -38,6 +38,10 @@ describe('app routes', () => {
 
   });
 
+  it('reads the contents of an index.html file', async () => {
+    const res = await request(app).get('/index.html');
+    expect(res.text).toEqual('<h1>This is my lab 07 server</h1>');
+  });
 
 
 
