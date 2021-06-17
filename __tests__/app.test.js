@@ -15,6 +15,7 @@ describe('app routes', () => {
     const res = await request(app).post('/echo').send('something');
     expect(res.text).toEqual('something');
 
+
   });
 
   it('it gets color red from /red', async () => {
@@ -38,6 +39,10 @@ describe('app routes', () => {
 
   });
 
+  it('reads the contents of an index.html file', async () => {
+    const res = await request(app).get('/index.html');
+    expect(res.text).toEqual('<h1>This is my lab 07 server</h1>');
+  });
 
 
 
